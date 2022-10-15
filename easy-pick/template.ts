@@ -1,6 +1,9 @@
 type MyPick<T, K extends keyof T> = {
   [P in K]: T[P];
 };
+// [P in K] 遍历
+// T[P] get value
+//  extends 泛型约束
 
 interface Todo {
     title: string
@@ -19,7 +22,9 @@ interface Todo {
 function myPick(todo, keys) {
   const obj = {};
   keys.forEach((key) => {
-    todo[key];
+    if(key in todo){
+        todo[key];
+    }
   });
   return obj;
 }
