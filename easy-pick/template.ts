@@ -3,8 +3,9 @@ type MyPick<T, K extends keyof T> = {
 };
 // [P in K] 遍历
 // T[P] get value
-//  extends 泛型约束
+//  extends 泛型约束 Generic Constraints
 
+// https://www.typescriptlang.org/docs/handbook/2/keyof-types.html#handbook-content
 interface Todo {
     title: string
     description: string
